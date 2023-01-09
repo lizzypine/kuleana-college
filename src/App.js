@@ -1,35 +1,22 @@
-import logo from './logo.svg';
+import React from "react";
+import Header from './components/Header'
+import SubjectsList from './components/SubjectsList'
+// import LessonsList from './components/LessonsList'
+// import Lesson from './components/Lesson'
+
 import './App.css';
 
-function App() {
+class App extends React.Component {
 
-  fetch("/subjectsapi.aspx")
-  .then((response) => {
-    return response.json();
-  })
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => console.error('Unable to get items.', error));
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  render() {
+    // Display the title, search bar, and post list.
+    return (
+      <div className="container">
+        <Header />
+        <SubjectsList />
+      </div>
+    );
+  }
 }
 
 export default App;
