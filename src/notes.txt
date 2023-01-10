@@ -1,0 +1,23 @@
+finance
+- checkbooks
+- debt
+- paychecks
+- benefits
+- taxes
+- investment
+- accountants
+- real numbers
+
+principles
+- compromise
+- steadfastness
+- integrity
+- seriousness
+- focus
+- doing your best 
+- pursuing goals
+
+responsibility
+- self
+- others
+- work
