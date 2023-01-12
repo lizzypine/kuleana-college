@@ -71,22 +71,26 @@ class SubjectsList extends Component {
         imagePath = Principles;
       }
 
+
+
       subjectElements.push(
-        <div className="col-sm" key={this.state.subjects[i].SubjectID}>
+        <div className="d-flex flex-column col justify-content-center align-items-center" key={this.state.subjects[i].SubjectID}>
+          <a class="text-decoration-none" href={"" + this.state.subjects[i].Subject + ""}>
           <div className="imageWrapper">
             <img className="subjectImage" src={imagePath} alt=""/>
           </div>
-          <div className="textWrapper">
-            <h2><a href={"" + this.state.subjects[i].Subject + ""}>{this.state.subjects[i].Subject}</a></h2>
+          <div className="textWrapper text-center">
+            <h2>{this.state.subjects[i].Subject}</h2>
           </div>
+          </a>
         </div>
       );
+
     }
 
     return (
-      <div className="container">
+      <div className="container subjects-wrapper">
         <div className="row">{subjectElements}</div>
-        <p><a href="https://www.vecteezy.com/free-vector/money">Money Vectors by Vecteezy</a>Attribution</p>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import Header from './components/Header'
 import SubjectsList from './components/SubjectsList'
+import Footer from './components/Footer'
 // import LessonsList from './components/LessonsList'
 // import Lesson from './components/Lesson'
 
@@ -14,6 +15,7 @@ class App extends React.Component {
       <div className="container">
         <Header />
         <SubjectsList />
+        <Footer />
       </div>
     );
   }
