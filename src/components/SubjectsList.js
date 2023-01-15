@@ -19,20 +19,13 @@ function SubjectsList() {
     fetchData();
   }, []);
 
-    // if (!this.state.subjects) {
-    //   return <span>Loading...</span>;
-    // }  
-
-    const images = require.context('../assets/images/', true)
-    // const image = Responsibility ? Finance : Principles
-
     return (
-      <div className="container-fluid subjects-wrapper d-flex flex-column col justify-content-center align-items-center py-4">
-        <div className="row">
+      <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center p-1">
+        <div className="row justify-content-center">
           {subjects && subjects.map((subject) => (
-            <div className="d-flex flex-column col justify-content-center align-items-center" key={subject.SubjectID}>
+            <div className="d-flex flex-column col-5 justify-content-center align-items-center card m-3 overflow-hidden" key={subject.SubjectID}>
             <a className="text-decoration-none" href={"" + subject.Subject + ""}>
-              <div className="imageWrapper">
+              <div className="">
                 <img className="subjectImage" src={`/images/${subject.Subject}` + ".jpg"} alt={subject.Subject + " Image"}/>
               </div>
               <div className="textWrapper text-center">

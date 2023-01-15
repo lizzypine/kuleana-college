@@ -2,23 +2,6 @@
   text-align: center;
 }
 
-/* .container {
-  min-height: 100vh;
-} */
-
-/* body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 h1 {
   font-family: 'Impact';
   text-transform: uppercase;
@@ -34,6 +17,7 @@ h2 {
 
 h3 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 3.5rem;
 }
 
 p {
@@ -47,17 +31,22 @@ p {
 }
 
 .hero {
-  height: 500px;
-  /* background-image: linear-gradient(to bottom, #f5c242, white); */
+  height: 350px;
   background: #f5c242;
 }
 
-/* .subjects-wrapper {
-  height: 700px;
-} */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 #f5c242;
+}
 
 .subjectImage {
-  max-height: 300px;
+  max-height: 320px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
