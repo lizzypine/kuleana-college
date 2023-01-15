@@ -1,13 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Lesson extends Component {
-  render() {
-
-    return (
-      <div>{Lesson}</div>
-    );
-
-  }
+function Lesson() {
+  return (
+    <div>{Lesson}</div>
+  )
 }
 
-export default Lesson;
+export default Lesson

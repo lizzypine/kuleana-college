@@ -7,18 +7,16 @@ import Footer from './components/Footer'
 
 import './App.css';
 
-class App extends React.Component {
+function App() {
 
-  render() {
-    // Display the title, search bar, and post list.
-    return (
-      <div className="container">
-        <Header />
-        <SubjectsList />
-        <Footer />
-      </div>
-    );
-  }
+  // Display the title, search bar, and post list.
+  return (
+    <div className="container">
+      <Header />
+      <SubjectsList />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

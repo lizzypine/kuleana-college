@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+/* .container {
+  min-height: 100vh;
+} */
+
 /* body {
   min-height: 100vh;
   display: flex;
@@ -36,23 +40,25 @@ p {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.nav-item {
+  color: black;
+  font-family: impact;
+  font-size: 1.3em;
+}
+
 .hero {
   height: 500px;
   /* background-image: linear-gradient(to bottom, #f5c242, white); */
   background: #f5c242;
 }
 
-.subjects-wrapper {
+/* .subjects-wrapper {
   height: 700px;
-}
+} */
 
 .subjectImage {
   max-height: 300px;
 }
-
-/* .footer-wrapper {
-  height: 100px;
-} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

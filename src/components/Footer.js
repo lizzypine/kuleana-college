@@ -1,17 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Footer extends Component {
-  render() {
-
-    return (
-      <div className="footer-wrapper d-flex flex-column col justify-content-center align-items-center">
-        <div className="row">
-        <h3>This is the footer.</h3>
-        </div>
+function Footer() {
+  return (
+    <footer className="footer mt-auto py-3">
+      <div className="container">
+        <ul className="navbar-nav flex-row align-items-center justify-content-center">
+          <li className="nav-item mx-3 text-muted">Kuleana College 2022</li>
+          <li className="nav-item mx-3 text-muted">
+            <a class="nav-link active" aria-current="page" href="#">Credits</a>
+          </li>
+        </ul>
       </div>
-    );
-
-  }
+    </footer>
+  )
 }
 
 export default Footer;
