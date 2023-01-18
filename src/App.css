@@ -12,7 +12,7 @@ h2 {
   font-family: 'Impact';
   text-transform: uppercase;
   font-size: 3rem;
-  color: black
+  color: black;
 }
 
 h3 {
@@ -30,13 +30,18 @@ p {
   font-size: 1.3em;
 }
 
+a.nav-item.nav-link.active {
+  text-decoration: underline;
+  text-decoration-color: #f5c242;
+}
+
 .hero {
   height: 350px;
   background: #f5c242;
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
   transition: 0.3s;
 }
 

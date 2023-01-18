@@ -1,25 +1,31 @@
-import React from "react";
-import NavLink from './components/NavLink'
+import { Provider } from 'react-redux'
+import AppRoutes from './router/routes'
+import store from './store/store'
+
+// Components
+import Navbar from './components/Navbar'
 import Header from './components/Header'
-import SubjectsList from './components/SubjectsList'
-import LessonsList from './components/LessonsList'
-// import Lesson from './components/Lesson'
 import Footer from './components/Footer'
 
-import './App.css';
+// Pages
+import './App.css'
 
 function App() {
+  // const lessons = [
+  //   { id: '9', title: 'responsibility-self' },
+  //   { id: '2', title: 'compromise' }
+  // ]
 
-  // Display the title, search bar, and post list.
   return (
-    <div className="container">
-      <NavLink />
-      <Header />
-      <SubjectsList />
-      <LessonsList />
-      <Footer />
-    </div>
-  );
+    <Provider store={store}>
+      <div className="container">
+        <Navbar />
+        <Header />
+        <AppRoutes />
+        <Footer />
+      </div>
+    </Provider>
+  )
 }
 
-export default App;
+export default App
