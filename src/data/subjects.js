@@ -7,6 +7,12 @@ export const subjectsApi = createApi({
   endpoints: (builder) => ({
     getSubjects: builder.query({
       query: () => 'subjectsapi.aspx'
+    }),
+    getLessons: builder.query({
+      query: (subjectId) => `lessonsapi.aspx?subjectid=${subjectId}`
+    }),
+    getLessonDetail: builder.query({
+      query: (lessonId) => `lessondetailsapi.aspx?lessonid=${lessonId}`
     })
   })
 })
@@ -14,3 +20,5 @@ export const subjectsApi = createApi({
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
 export const { useGetSubjectsQuery } = subjectsApi
+export const { useGetLessonsQuery } = subjectsApi
+export const { useGetLessonDetailQuery } = subjectsApi

@@ -1,27 +1,8 @@
-// import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useGetSubjectsQuery } from '../data/subjects'
 
 function SubjectsList() {
   const { data, isLoading } = useGetSubjectsQuery()
-  // const [subjects, setSubjects] = useState()
-
-  // // useEffect(() => {
-  // //   const url = '/subjectsapi.aspx'
-
-  // //   // Rewrite with RTK
-  // //   const fetchData = async () => {
-  // //     try {
-  // //       const response = await fetch(url)
-  // //       const json = await response.json()
-  // //       setSubjects(json)
-  // //     } catch (error) {
-  // //       console.log('error', error)
-  // //     }
-  // //   }
-
-  //   fetchData()
-  // }, [])
 
   return (
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center p-1">
