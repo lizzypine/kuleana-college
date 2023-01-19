@@ -1,44 +1,16 @@
-// import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useGetLessonDetailQuery } from '../data/subjects'
 
 function LessonDetail() {
   const params = useParams()
-  const { data, isLoading } = useGetLessonDetailQuery(params.lessonId)
+  const { data, isLoading, error } = useGetLessonDetailQuery(params.lessonId)
   const navigate = useNavigate()
-
-  // const [details, setDetails] = useState()
-  // const params = useParams()
-  // const navigate = useNavigate()
-
-  // useEffect(() => {
-  //   // Pass lessonId from LessonsList to LessonDetail and fetch from the correct API endpoint.
-  //   // Url is based on the on the lesson id (e.g., lessonid=2 is compromise, lessonid=3 is steadfastness)
-
-  //   // const url = "/lessondetailsapi.aspx?lessonid=12";
-  //   const url = `/lessondetailsapi.aspx?lessonid=${params.lessonId}`
-  //   // const url = `/lessondetailsapi.aspx?lessonid=${params.lessonId}`
-
-  //   // eslint-disable-next-line space-before-function-paren
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await fetch(url)
-  //       console.log(url)
-  //       const json = await response.json()
-  //       console.log(json)
-  //       setDetails(json)
-  //     } catch (error) {
-  //       console.log('error', error)
-  //     }
-  //   }
-
-  //   fetchData()
-  // }, [])
 
   return (
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center p-1">
       <div className="row justify-content-center">
         <div>{isLoading ? 'Loading...' : ''}</div>
+        <div>{error ? 'There has been an error...' : ''}</div>
         {data &&
           data.map((detail) => (
             <div

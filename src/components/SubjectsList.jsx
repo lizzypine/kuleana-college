@@ -2,12 +2,13 @@ import { Link } from 'react-router-dom'
 import { useGetSubjectsQuery } from '../data/subjects'
 
 function SubjectsList() {
-  const { data, isLoading } = useGetSubjectsQuery()
+  const { data, isLoading, error } = useGetSubjectsQuery()
 
   return (
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center p-1">
       <div className="row justify-content-center">
         <div>{isLoading ? 'Loading...' : ''}</div>
+        <div>{error ? 'There has been an error...' : ''}</div>
         {data &&
           data.map((subject) => (
             <div
