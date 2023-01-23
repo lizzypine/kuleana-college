@@ -1,17 +1,23 @@
-.App {
-  text-align: center;
+body {
+  height: 100%;
+}
+
+.footer {
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear: both;
+  padding-top: 20px;
 }
 
 h1 {
   font-family: 'Impact';
   text-transform: uppercase;
-  font-size: 9rem;
 }
 
 h2 {
   font-family: 'Impact';
   text-transform: uppercase;
-  font-size: 3rem;
   color: black;
 }
 
@@ -24,15 +30,19 @@ p {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.navbar {
+  background-color: #f5c242;
+}
+
+.navbar-brand {
+  font-size: 3em;
+  font-family: impact;
+}
+
 .nav-item {
   color: black;
   font-family: impact;
-  font-size: 1.3em;
-}
-
-a.nav-item.nav-link.active {
-  text-decoration: underline;
-  text-decoration-color: #f5c242;
+  font-size: 1em;
 }
 
 .hero {
@@ -41,11 +51,12 @@ a.nav-item.nav-link.active {
 }
 
 .card {
+  max-width: 690px;
+  height: 410px;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
   transition: 0.3s;
 }
 
-/* On mouse-over, add a deeper shadow */
 .card:hover {
   box-shadow: 0 8px 16px 0 #f5c242;
 }

@@ -1,13 +1,12 @@
 import AppRoutes from './router/routes'
 import './App.css'
 import Navbar from './components/Navbar'
-import Header from './components/Header'
+// import Header from './components/Header'
 import Footer from './components/Footer'
 function App() {
   return (
-    <div className="container">
+    <div className="d-flex flex-column min-vh-100">
       <Navbar />
-      <Header />
       <AppRoutes />
       <Footer />
     </div>

@@ -7,7 +7,16 @@ function SubjectsList() {
   return (
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center p-1">
       <div className="row justify-content-center">
-        <div>{isLoading ? 'Loading...' : ''}</div>
+        <div className="text-center p-5">
+          <h1 className="">Subjects</h1>
+        </div>
+        <div className="d-flex justify-content-center">
+          {isLoading && (
+            <div className="spinner-border " role="status">
+              <span className="sr-only"></span>
+            </div>
+          )}
+        </div>
         <div>{error ? 'There has been an error...' : ''}</div>
         {data &&
           data.map((subject) => (
@@ -17,7 +26,7 @@ function SubjectsList() {
               <Link className="text-decoration-none" Link to={`/${subject.SubjectID}`}>
                 <div className="">
                   <img
-                    className="subjectImage"
+                    className="subjectImage img-fluid"
                     src={`/images/${subject.Subject}` + '.jpg'}
                     alt={subject.Subject + ' Image'}
                   />
@@ -32,5 +41,4 @@ function SubjectsList() {
     </div>
   )
 }
-
 export default SubjectsList
