@@ -50,11 +50,20 @@ p {
   background: #f5c242;
 }
 
+.title-background {
+  background-image: url('/public/images/title-background.jpg');
+}
+
 .card {
   max-width: 690px;
   height: 410px;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
   transition: 0.3s;
+}
+
+.sub-topic {
+  max-width: 500px;
+  height: 300px;
 }
 
 .card:hover {

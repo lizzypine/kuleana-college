@@ -30,7 +30,7 @@ function LessonDetail() {
                 />
               </div>
               <div className="textWrapper text-center">
-                <h2>{detail.LessonTitle}</h2>
+                <h1>{detail.LessonTitle}</h1>
                 <p>{detail.LessonText}</p>
               </div>
             </div>

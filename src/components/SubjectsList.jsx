@@ -7,8 +7,8 @@ function SubjectsList() {
   return (
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center p-1">
       <div className="row justify-content-center">
-        <div className="text-center p-5">
-          <h1 className="">Subjects</h1>
+        <div className="text-center p-5 title-background">
+          <h1>Subjects</h1>
         </div>
         <div className="d-flex justify-content-center">
           {isLoading && (

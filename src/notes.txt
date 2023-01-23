@@ -21,3 +21,26 @@ responsibility
 - self
 - others
 - work
+
+  // const lessonNames = {
+  //   2: 'Compromise',
+  //   3: 'Steadfastness',
+  //   4: 'Integrity',
+  //   5: 'Seriousness',
+  //   6: 'Focus',
+  //   7: 'Doing Your Best',
+  //   8: 'Pursuing Goals',
+  //   9: 'Self',
+  //   10: 'Others',
+  //   11: 'Work',
+  //   12: 'Checkbooks',
+  //   13: 'Debt',
+  //   14: 'Paychecks',
+  //   15: 'Benefits',
+  //   16: 'Taxes',
+  //   17: 'Investment',
+  //   18: 'Accountants',
+  //   19: 'Real Numbers'
+  // }
+
+  // const lessonName = lessonNames[params.lessonId]
