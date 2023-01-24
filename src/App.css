@@ -46,6 +46,11 @@ h3 {
   font-size: 1em;
 }
 
+.footer-nav-item {
+  color: white;
+  font-weight: bold;
+}
+
 .btn-back {
   background-color: #f5c242;
 }
@@ -76,16 +81,6 @@ h3 {
   );
 }
 
-/* .left {
-  background-image: url('/public/images/text-emphasize-left.jpg');
-  background-repeat: no-repeat;
-}
-
-.right {
-  background-image: url('/public/images/text-emphasize-right.jpg');
-  background-repeat: no-repeat;
-} */
-
 .card {
   max-width: 690px;
   height: 410px;
@@ -104,6 +99,10 @@ h3 {
 
 .subjectImage {
   max-height: 320px;
+}
+
+.responsibilityImage {
+  max-height: 230px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

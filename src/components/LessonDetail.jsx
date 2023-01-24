@@ -7,9 +7,9 @@ function LessonDetail() {
   const navigate = useNavigate()
 
   return (
-    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap align-items-center p-1">
+    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap align-items-center">
       <div className="row justify-content-center">
-        <div className="d-flex justify-content-center mt-3">
+        <div className="d-flex justify-content-center">
           {isLoading && (
             <div className="spinner-border " role="status">
               <span className="sr-only"></span>

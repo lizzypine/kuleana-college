@@ -16,7 +16,7 @@ function LessonsList() {
   const subjectName = subjectNames[params.subjectId]
 
   return (
-    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center mt-5">
+    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center">
       <div className="row justify-content-center">
         <div className="text-center mb-3">
           <h1>{subjectName}</h1>
@@ -38,9 +38,13 @@ function LessonsList() {
               <Link className="text-decoration-none" Link to={`${lesson.LessonID}`}>
                 <div className="">
                   <img
-                    className="subjectImage"
+                    className="responsibilityImage mb-3"
                     src={`/images/${lesson.LessonTitle}` + '.jpg'}
                     alt={lesson.LessonTitle + ' Image'}
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null // prevents looping
+                      currentTarget.src = '/images/Self.jpg'
+                    }}
                   />
                 </div>
                 <div className="textWrapper text-center">

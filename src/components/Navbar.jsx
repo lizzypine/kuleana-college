@@ -3,7 +3,7 @@ import { MortarBoardIcon } from '@primer/octicons-react'
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg px-5">
+    <nav className="navbar navbar-expand-lg px-5 mb-5">
       <div className="p-2">
         <MortarBoardIcon size={40} class="mr-2" />
         <Link class="navbar-brand ms-3 text-uppercase" Link to="/">
