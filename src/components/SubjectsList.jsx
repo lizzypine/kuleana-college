@@ -5,8 +5,8 @@ function SubjectsList() {
   const { data, isLoading, error } = useGetSubjectsQuery()
 
   return (
-    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center">
-      <div className="row justify-content-center">
+    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-start align-items-center">
+      <div className="row justify-content-center subjectsContainer">
         <div className="text-center mb-3">
           <h1>Subjects</h1>
           <hr className="title-divider"></hr>

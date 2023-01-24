@@ -16,8 +16,8 @@ function LessonsList() {
   const subjectName = subjectNames[params.subjectId]
 
   return (
-    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center">
-      <div className="row justify-content-center">
+    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-start align-items-center">
+      <div className="row justify-content-center subjectsContainer">
         <div className="text-center mb-3">
           <h1>{subjectName}</h1>
           <hr className="title-divider"></hr>
@@ -33,7 +33,7 @@ function LessonsList() {
         {data &&
           data.map((lesson) => (
             <div
-              className="d-flex flex-column col-5 justify-content-center align-items-center card sub-topic m-3 overflow-hidden"
+              className="d-flex flex-column col-5 justify-content-center align-items-center card m-3 overflow-hidden"
               key={lesson.LessonID}>
               <Link className="text-decoration-none" Link to={`${lesson.LessonID}`}>
                 <div className="">

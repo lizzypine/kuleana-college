@@ -88,13 +88,12 @@ h3 {
   transition: 0.3s;
 }
 
-.sub-topic {
-  max-width: 500px;
-  height: 300px;
-}
-
 .card:hover {
   box-shadow: 0 8px 16px 0 #f5c242;
+}
+
+.subjectsContainer {
+  max-width: 60%;
 }
 
 .subjectImage {
@@ -102,7 +101,7 @@ h3 {
 }
 
 .responsibilityImage {
-  max-height: 230px;
+  max-height: 310px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
