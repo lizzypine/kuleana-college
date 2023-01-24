@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg px-5">
       <div className="p-2">
         <MortarBoardIcon size={40} class="mr-2" />
-        <Link class="navbar-brand ms-3" Link to="/">
+        <Link class="navbar-brand ms-3 text-uppercase" Link to="/">
           Kuleana College
         </Link>
       </div>
@@ -22,10 +22,10 @@ function Navbar() {
       </button>
       <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div className="navbar-nav h3 m-2">
-          <Link className="nav-item nav-link mx-4" Link to="/about">
+          <Link className="nav-item nav-link mx-4 text-uppercase" Link to="/about">
             About
           </Link>
-          <Link className="nav-item nav-link mx-4" Link to="/contact">
+          <Link className="nav-item nav-link mx-4 text-uppercase" Link to="/contact">
             Contact
           </Link>
         </div>

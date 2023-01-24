@@ -7,9 +7,9 @@ function LessonDetail() {
   const navigate = useNavigate()
 
   return (
-    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center p-1">
+    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap align-items-center p-1">
       <div className="row justify-content-center">
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center mt-3">
           {isLoading && (
             <div className="spinner-border " role="status">
               <span className="sr-only"></span>
@@ -20,7 +20,7 @@ function LessonDetail() {
         {data &&
           data.map((detail) => (
             <div
-              className="d-flex flex-column justify-content-center align-items-center "
+              className="d-flex flex-column justify-content-center align-items-center"
               key={detail.LessonID}>
               <div className="">
                 <img
@@ -29,15 +29,16 @@ function LessonDetail() {
                   alt={detail.LessonTitle + ' Image'}
                 />
               </div>
-              <div className="textWrapper text-center">
+              <div className="textWrapper text-center w-75">
                 <h1>{detail.LessonTitle}</h1>
-                <p>{detail.LessonText}</p>
+                <hr className="title-divider"></hr>
+                <p className="mt-4">{detail.LessonText}</p>
               </div>
             </div>
           ))}
       </div>
       <div className="m-5">
-        <button type="button" className="btn btn-info nav-item" onClick={() => navigate(-1)}>
+        <button type="button" className="btn btn-back nav-item" onClick={() => navigate(-1)}>
           Back
         </button>
       </div>

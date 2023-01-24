@@ -16,12 +16,13 @@ function LessonsList() {
   const subjectName = subjectNames[params.subjectId]
 
   return (
-    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center p-1">
+    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center mt-5">
       <div className="row justify-content-center">
-        <div className="text-center p-5 title-background">
+        <div className="text-center mb-3">
           <h1>{subjectName}</h1>
+          <hr className="title-divider"></hr>
         </div>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center m-2">
           {isLoading && (
             <div className="spinner-border " role="status">
               <span className="sr-only"></span>
@@ -50,7 +51,7 @@ function LessonsList() {
           ))}
       </div>
       <div className="m-5">
-        <button type="button" className="btn btn-info nav-item" onClick={() => navigate(-1)}>
+        <button type="button" className="btn btn-back nav-item" onClick={() => navigate(-1)}>
           Back
         </button>
       </div>

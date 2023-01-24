@@ -2,6 +2,11 @@ body {
   height: 100%;
 }
 
+.emphasize {
+  width: 5%;
+  height: auto;
+}
+
 .footer {
   position: relative;
   margin-top: -150px; /* negative value of footer height */
@@ -26,10 +31,6 @@ h3 {
   font-size: 3.5rem;
 }
 
-p {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
 .navbar {
   background-color: #f5c242;
 }
@@ -45,14 +46,45 @@ p {
   font-size: 1em;
 }
 
+.btn-back {
+  background-color: #f5c242;
+}
+
 .hero {
   height: 350px;
   background: #f5c242;
 }
 
-.title-background {
+.background {
   background-image: url('/public/images/title-background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
 }
+
+.title-divider {
+  margin: auto;
+  border: 0;
+  padding-top: 10px;
+  height: 3px;
+  width: 500px;
+  background-image: linear-gradient(
+    to right,
+    rgba(29, 214, 239, 0),
+    rgba(16, 100, 236, 0.89),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/* .left {
+  background-image: url('/public/images/text-emphasize-left.jpg');
+  background-repeat: no-repeat;
+}
+
+.right {
+  background-image: url('/public/images/text-emphasize-right.jpg');
+  background-repeat: no-repeat;
+} */
 
 .card {
   max-width: 690px;

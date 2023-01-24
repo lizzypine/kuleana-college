@@ -5,10 +5,11 @@ function SubjectsList() {
   const { data, isLoading, error } = useGetSubjectsQuery()
 
   return (
-    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center p-1">
+    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-center align-items-center">
       <div className="row justify-content-center">
-        <div className="text-center p-5 title-background">
+        <div className="text-center mb-3">
           <h1>Subjects</h1>
+          <hr className="title-divider"></hr>
         </div>
         <div className="d-flex justify-content-center">
           {isLoading && (
@@ -16,8 +17,8 @@ function SubjectsList() {
               <span className="sr-only"></span>
             </div>
           )}
+          {error ? 'There has been an error...' : ''}
         </div>
-        <div>{error ? 'There has been an error...' : ''}</div>
         {data &&
           data.map((subject) => (
             <div
