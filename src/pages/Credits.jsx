@@ -21,6 +21,14 @@ function Credits() {
               <li>
                 <a href="https://www.vecteezy.com/free-vector/jump">Jump Vectors by Vecteezy</a>
               </li>
+              <li>
+                <a href="https://www.vecteezy.com/free-vector/health-insurance">
+                  Health Insurance Vectors by Vecteezy
+                </a>
+              </li>
+              <li>
+                <a href="https://www.vecteezy.com/free-vector/money">Money Vectors by Vecteezy</a>
+              </li>
             </ul>
             <h3>
               {' '}
@@ -29,6 +37,41 @@ function Credits() {
             <ul>
               <li>
                 <a href="https://www.vecteezy.com/free-vector/doodle">Doodle Vectors by Vecteezy</a>
+              </li>
+            </ul>
+            <h3>
+              {' '}
+              <a href="https://www.vecteezy.com/members/imajin-noasking">imajin noasking</a>
+            </h3>
+            <ul>
+              <li>
+                <a href="https://www.vecteezy.com/free-vector/health-insurance">
+                  Health Insurance Vectors by Vecteezy
+                </a>
+              </li>
+            </ul>
+            <h3>
+              {' '}
+              <a href="https://www.vecteezy.com/members/doodervector">Dooder</a>
+            </h3>
+            <ul>
+              <li>
+                <a href="https://www.vecteezy.com/free-vector/health-insurance">
+                  Health Insurance Vectors by Vecteezy
+                </a>
+              </li>
+            </ul>
+            <h3>
+              {' '}
+              <a href="https://www.vecteezy.com/members/illustration4stock224427">
+                illustration4stock224427
+              </a>
+            </h3>
+            <ul>
+              <li>
+                <a href="https://www.vecteezy.com/free-vector/health-insurance">
+                  Health Insurance Vectors by Vecteezy
+                </a>
               </li>
             </ul>
           </div>

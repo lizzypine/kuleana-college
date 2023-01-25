@@ -22,7 +22,7 @@ function LessonsList() {
           <h1>{subjectName}</h1>
           <hr className="title-divider"></hr>
         </div>
-        <div className="d-flex justify-content-center m-2">
+        <div className="d-flex justify-content-center">
           {isLoading && (
             <div className="spinner-border " role="status">
               <span className="sr-only"></span>
@@ -39,10 +39,15 @@ function LessonsList() {
                 <div className="">
                   <img
                     className="responsibilityImage mb-3"
-                    src={`/images/${lesson.LessonTitle}` + '.jpg'}
+                    // Image file names are based on the original website's image files.
+                    src={
+                      `/images/${lesson.ImageName.substring(13, lesson.ImageName.length - 4)}` +
+                      '.jpg'
+                    }
                     alt={lesson.LessonTitle + ' Image'}
+                    // Use a placeholder image if none available.
                     onError={({ currentTarget }) => {
-                      currentTarget.onerror = null // prevents looping
+                      currentTarget.onerror = null
                       currentTarget.src = '/images/Self.jpg'
                     }}
                   />
@@ -54,7 +59,7 @@ function LessonsList() {
             </div>
           ))}
       </div>
-      <div className="m-5">
+      <div className="m-3">
         <button type="button" className="btn btn-back nav-item" onClick={() => navigate(-1)}>
           Back
         </button>

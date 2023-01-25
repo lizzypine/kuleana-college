@@ -37,7 +37,7 @@ function LessonDetail() {
             </div>
           ))}
       </div>
-      <div className="m-5">
+      <div className="m-3">
         <button type="button" className="btn btn-back nav-item" onClick={() => navigate(-1)}>
           Back
         </button>
