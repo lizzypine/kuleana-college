@@ -11,11 +11,14 @@ function LessonDetail() {
       <div className="row justify-content-center">
         <div className="d-flex justify-content-center">
           {isLoading && (
-            <div className="spinner-border " role="status">
+            <div
+              className="spinner-border "
+              role="status"
+              style={{ width: '3rem', height: '3rem' }}>
               <span className="sr-only"></span>
             </div>
           )}
-          {error ? 'There has been an error...' : ''}
+          <h3>{error ? 'There has been an error...' : ''}</h3>
         </div>
         {data &&
           data.map((detail) => (
