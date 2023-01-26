@@ -9,8 +9,8 @@ body {
 
 .footer {
   position: relative;
-  margin-top: -150px; /* negative value of footer height */
-  height: 150px;
+  margin-top: -200px; /* negative value of footer height */
+  height: 200px;
   clear: both;
   padding-top: 20px;
 }
@@ -28,7 +28,7 @@ h2 {
 
 h3 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 3.5rem;
+  /* font-size: 3.5rem; */
 }
 
 .navbar {
@@ -48,7 +48,7 @@ h3 {
 
 .footer-nav-item {
   color: white;
-  font-weight: bold;
+  font-family: impact;
 }
 
 .btn-back {
@@ -131,10 +131,6 @@ h3 {
   }
 }
 
-html {
-  font-size: 1rem;
-}
-
 @media (max-width: 575.98px) {
   html {
     font-size: 1.2rem;
@@ -149,18 +145,23 @@ html {
 
 @media (min-width: 768px) and (max-width: 991.98px) {
   html {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
   html {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 }
 
 @media (min-width: 1200px) {
   html {
-    font-size: 1.9rem;
+    font-size: 2.3rem;
+  }
+
+  .card {
+    max-width: 870px;
+    height: 600px;
   }
 }

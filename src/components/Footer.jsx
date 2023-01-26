@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
-    <footer className="footer mt-auto py-5">
+    <footer className="footer mt-auto">
       <div className="container">
         <hr />
         <ul className="navbar-nav flex-row align-items-center justify-content-center">
