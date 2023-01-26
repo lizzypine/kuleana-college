@@ -96,12 +96,8 @@ h3 {
   max-width: 60%;
 }
 
-.subjectImage {
+.subjectLessonImage {
   max-height: 320px;
-}
-
-.responsibilityImage {
-  max-height: 310px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -132,5 +128,39 @@ h3 {
 
   to {
     transform: rotate(360deg);
+  }
+}
+
+html {
+  font-size: 1rem;
+}
+
+@media (max-width: 575.98px) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  html {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  html {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 1.9rem;
   }
 }

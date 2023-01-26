@@ -24,12 +24,21 @@ function LessonDetail() {
               key={detail.LessonID}>
               <div className="">
                 <img
-                  className="subjectImage"
-                  src={`/images/${detail.LessonText}` + '.jpg'}
+                  className="subjectLessonImage img-fluid mb-3"
+                  // Image file names are based on the original website's image files.
+                  src={
+                    `/images/${detail.ImageName.substring(13, detail.ImageName.length - 4)}` +
+                    '.jpg'
+                  }
                   alt={detail.LessonTitle + ' Image'}
+                  // Use a placeholder image if none available.
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null
+                    currentTarget.src = '/images/Self.jpg'
+                  }}
                 />
               </div>
-              <div className="textWrapper text-center w-75">
+              <div className="w-75 text-center text-justify">
                 <h1>{detail.LessonTitle}</h1>
                 <hr className="title-divider"></hr>
                 <p className="mt-4">{detail.LessonText}</p>

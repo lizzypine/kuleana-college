@@ -1,15 +1,21 @@
 import { Link } from 'react-router-dom'
-import { MortarBoardIcon } from '@primer/octicons-react'
+// import { MortarBoardIcon } from '@primer/octicons-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSchool } from '@fortawesome/free-solid-svg-icons'
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg px-5 mb-5">
-      <div className="p-2">
-        <MortarBoardIcon size={40} class="mr-2" />
-        <Link class="navbar-brand ms-3 text-uppercase" Link to="/">
+    <nav className="navbar navbar-expand-lg px-4 mb-4">
+      <Link class="navbar-brand ms-3 text-uppercase" Link to="/">
+        <div className="">
+          <FontAwesomeIcon
+            icon={faSchool}
+            width="1.1em"
+            class="d-inline-block me-3 align-baseline"
+          />
           Kuleana College
-        </Link>
-      </div>
+        </div>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"

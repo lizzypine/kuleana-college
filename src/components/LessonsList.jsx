@@ -38,7 +38,7 @@ function LessonsList() {
               <Link className="text-decoration-none" Link to={`${lesson.LessonID}`}>
                 <div className="">
                   <img
-                    className="responsibilityImage mb-3"
+                    className="subjectLessonImage img-fluid mb-3"
                     // Image file names are based on the original website's image files.
                     src={
                       `/images/${lesson.ImageName.substring(13, lesson.ImageName.length - 4)}` +

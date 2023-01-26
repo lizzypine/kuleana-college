@@ -27,7 +27,7 @@ function SubjectsList() {
               <Link className="text-decoration-none" Link to={`/${subject.SubjectID}`}>
                 <div className="">
                   <img
-                    className="subjectImage img-fluid"
+                    className="subjectLessonImage img-fluid"
                     src={`/images/${subject.Subject}` + '.jpg'}
                     alt={subject.Subject + ' Image'}
                   />
