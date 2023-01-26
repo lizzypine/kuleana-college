@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap align-items-center p-1">
+    <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap align-items-center">
       <div className="row justify-content-center">
         <div className="text-center p-5 title-background">
           <h1>About</h1>
