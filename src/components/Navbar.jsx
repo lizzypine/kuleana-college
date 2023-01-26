@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-// import { MortarBoardIcon } from '@primer/octicons-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSchool } from '@fortawesome/free-solid-svg-icons'
 
