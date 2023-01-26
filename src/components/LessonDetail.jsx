@@ -15,8 +15,8 @@ function LessonDetail() {
               <span className="sr-only"></span>
             </div>
           )}
+          {error ? 'There has been an error...' : ''}
         </div>
-        <div>{error ? 'There has been an error...' : ''}</div>
         {data &&
           data.map((detail) => (
             <div
