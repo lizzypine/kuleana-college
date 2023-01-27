@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useGetSubjectsQuery } from '../data/subjects'
 
+import { motion } from "framer-motion"
+
 function SubjectsList() {
   const { data, isLoading, error } = useGetSubjectsQuery()
 

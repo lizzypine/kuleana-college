@@ -6,7 +6,7 @@ function Credits() {
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap align-items-center">
       <div className="row justify-content-center">
         <div className="text-center mb-4">
-          <h1>Image Credits</h1>
+          <h1>Vector Image Credits</h1>
           <hr className="title-divider"></hr>
         </div>
         <div className="d-flex flex-column justify-content-center align-items-center m-3 overflow-hidden">

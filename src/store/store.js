@@ -1,7 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { subjectsApi } from '../data/subjects'
-// import { lessonsApi } from '../data/lessons'
 
 export const store = configureStore({
   reducer: {
