@@ -36,9 +36,9 @@ function LessonsList() {
               className="d-flex flex-column col-5 justify-content-center align-items-center card m-3 overflow-hidden"
               key={lesson.LessonID}>
               <Link className="text-decoration-none" Link to={`${lesson.LessonID}`}>
-                <div className="">
+                <div className="cardImageContainer">
                   <img
-                    className="subjectLessonImage img-fluid mb-3"
+                    className="subjectLessonImage img-fluid"
                     // Image file names are based on the original website's image files.
                     src={
                       `/images/${lesson.ImageName.substring(13, lesson.ImageName.length - 4)}` +
@@ -52,7 +52,7 @@ function LessonsList() {
                     }}
                   />
                 </div>
-                <div className="textWrapper text-center">
+                <div className="textWrapper text-center mt-4">
                   <h2>{lesson.LessonTitle}</h2>
                 </div>
               </Link>

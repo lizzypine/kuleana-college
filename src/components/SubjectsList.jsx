@@ -25,7 +25,7 @@ function SubjectsList() {
               className="d-flex flex-column col-5 justify-content-center align-items-center card m-3 overflow-hidden"
               key={subject.SubjectID}>
               <Link className="text-decoration-none" Link to={`/${subject.SubjectID}`}>
-                <div className="">
+                <div className="cardImageContainer">
                   <img
                     className="subjectLessonImage img-fluid"
                     src={`/images/${subject.Subject}` + '.jpg'}
