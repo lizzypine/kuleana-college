@@ -25,9 +25,10 @@ function LessonDetail() {
             <div
               className="d-flex flex-column justify-content-center align-items-center"
               key={detail.LessonID}>
-              <div className="">
+              <div className="row justify-content-center">
                 <img
-                  className="subjectLessonImage img-fluid mb-3"
+                  className="subject-lesson-image img-fluid mb-3"
+                  id="lesson-detail-image-container"
                   // Image file names are based on the original website's image files.
                   src={
                     `/images/${detail.ImageName.substring(13, detail.ImageName.length - 4)}` +
@@ -41,8 +42,8 @@ function LessonDetail() {
                   }}
                 />
               </div>
-              <div className="w-75 text-center text-justify">
-                <h1>{detail.LessonTitle}</h1>
+              <div className="w-75">
+                <h1 className="text-center">{detail.LessonTitle}</h1>
                 <hr className="title-divider"></hr>
                 <p className="mt-4">{detail.LessonText}</p>
               </div>

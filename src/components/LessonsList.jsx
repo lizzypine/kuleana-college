@@ -17,7 +17,7 @@ function LessonsList() {
 
   return (
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-start align-items-center">
-      <div className="row justify-content-center subjectsContainer">
+      <div className="row justify-content-center subjects-container">
         <div className="text-center mb-3">
           <h1>{subjectName}</h1>
           <hr className="title-divider"></hr>
@@ -36,9 +36,9 @@ function LessonsList() {
               className="d-flex flex-column col-5 justify-content-center align-items-center card m-3 overflow-hidden"
               key={lesson.LessonID}>
               <Link className="text-decoration-none" Link to={`${lesson.LessonID}`}>
-                <div className="cardImageContainer">
+                <div>
                   <img
-                    className="subjectLessonImage img-fluid"
+                    className="subject-lesson-image img-fluid"
                     // Image file names are based on the original website's image files.
                     src={
                       `/images/${lesson.ImageName.substring(13, lesson.ImageName.length - 4)}` +
@@ -52,7 +52,7 @@ function LessonsList() {
                     }}
                   />
                 </div>
-                <div className="textWrapper text-center mt-4">
+                <div className="textWrapper text-center mt-2">
                   <h2>{lesson.LessonTitle}</h2>
                 </div>
               </Link>

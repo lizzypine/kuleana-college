@@ -6,7 +6,7 @@ function SubjectsList() {
 
   return (
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-start align-items-center">
-      <div className="row justify-content-center subjectsContainer">
+      <div className="row justify-content-center subjects-container">
         <div className="text-center mb-3">
           <h1>Subjects</h1>
           <hr className="title-divider"></hr>
@@ -25,14 +25,14 @@ function SubjectsList() {
               className="d-flex flex-column col-5 justify-content-center align-items-center card m-3 overflow-hidden"
               key={subject.SubjectID}>
               <Link className="text-decoration-none" Link to={`/${subject.SubjectID}`}>
-                <div className="cardImageContainer">
+                <div>
                   <img
-                    className="subjectLessonImage img-fluid"
+                    className="subject-lesson-image img-fluid"
                     src={`/images/${subject.Subject}` + '.jpg'}
                     alt={subject.Subject + ' Image'}
                   />
                 </div>
-                <div className="textWrapper text-center">
+                <div className="textWrapper text-center mt-2">
                   <h2>{subject.Subject}</h2>
                 </div>
               </Link>
