@@ -30,7 +30,7 @@ function SubjectsList() {
                 animate={{ y: 0, opacity: 1, scale: 1 }}
                 transition={{ duration: 0.2, ease: 'easeOut', delay: i * 0.2 }}
                 exit={{ x: '20%' }}
-                className="d-flex flex-column col-5 justify-content-center align-items-center card m-3 overflow-hidden">
+                className="d-flex flex-column col-5 justify-content-center align-items-center card-subject m-3 overflow-hidden">
                 <Link className="text-decoration-none" Link to={`/${subject.SubjectID}`}>
                   <div>
                     <img

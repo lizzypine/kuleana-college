@@ -39,7 +39,7 @@ function LessonsList() {
                 animate={{ y: 0, opacity: 1, scale: 1 }}
                 transition={{ duration: 0.2, ease: 'easeOut', delay: i * 0.2 }}
                 exit={{ y: '20%', opacity: 0 }}
-                className="d-flex flex-column col-5 justify-content-center align-items-center card m-3 overflow-hidden">
+                className="d-flex flex-column col-5 justify-content-center align-items-center card-lesson m-3 overflow-hidden">
                 <Link className="text-decoration-none" Link to={`${lesson.LessonID}`}>
                   <div>
                     <img
