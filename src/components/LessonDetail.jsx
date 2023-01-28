@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useGetLessonDetailQuery } from '../data/subjects'
+import { motion, AnimatePresence } from 'framer-motion'
 
 function LessonDetail() {
   const params = useParams()
@@ -21,31 +22,47 @@ function LessonDetail() {
           <h3>{error ? 'There has been an error...' : ''}</h3>
         </div>
         {data &&
-          data.map((detail) => (
+          data.map((detail, i) => (
             <div
               className="d-flex flex-column justify-content-center align-items-center"
               key={detail.LessonID}>
-              <div className="row justify-content-center">
-                <img
-                  className="subject-lesson-image img-fluid mb-3"
-                  id="lesson-detail-image-container"
-                  // Image file names are based on the original website's image files.
-                  src={
-                    `/images/${detail.ImageName.substring(13, detail.ImageName.length - 4)}` +
-                    '.jpg'
-                  }
-                  alt={detail.LessonTitle + ' Image'}
-                  // Use a placeholder image if none available.
-                  onError={({ currentTarget }) => {
-                    currentTarget.onerror = null
-                    currentTarget.src = '/images/Self.jpg'
-                  }}
-                />
-              </div>
+              <motion.h1
+                initial={{ y: 800 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className="text-center">
+                {detail.LessonTitle}
+              </motion.h1>
+              <motion.hr
+                initial={{ y: 800 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.2, ease: 'easeOut', delay: i * 0.2 }}
+                className="title-divider"></motion.hr>
+              <AnimatePresence>
+                <motion.div
+                  initial={{ y: 800 }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.2, ease: 'easeOut', delay: i * 0.2 }}
+                  className="row justify-content-center">
+                  <img
+                    className="subject-lesson-image img-fluid mb-3"
+                    id="lesson-detail-image-container"
+                    // Image file names are based on the original website's image files.
+                    src={
+                      `/images/${detail.ImageName.substring(13, detail.ImageName.length - 4)}` +
+                      '.jpg'
+                    }
+                    alt={detail.LessonTitle + ' Image'}
+                    // Use a placeholder image if none available.
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null
+                      currentTarget.src = '/images/Self.jpg'
+                    }}
+                  />
+                </motion.div>
+              </AnimatePresence>
               <div className="w-75">
-                <h1 className="text-center">{detail.LessonTitle}</h1>
-                <hr className="title-divider"></hr>
-                <p className="mt-4">{detail.LessonText}</p>
+                <p>{detail.LessonText}</p>
               </div>
             </div>
           ))}
