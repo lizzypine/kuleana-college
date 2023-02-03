@@ -1,14 +1,59 @@
 import { Link } from 'react-router-dom'
 import { useGetSubjectsQuery } from '../data/subjects'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 function SubjectsList() {
   const { data, isLoading, error } = useGetSubjectsQuery()
-  // const [move, setMove] = React
+
+  const parent = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.5,
+        delay: 0.3,
+        default: { ease: 'easeInOut' }
+      }
+    },
+    hidden: {
+      opacity: 0,
+      x: 1,
+      transition: {
+        when: 'afterChildren'
+      }
+    }
+  }
+
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      y: '20%',
+      scale: 0.5
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        delayChildren: 200,
+        staggerChildren: 0.2,
+        ease: 'easeOut'
+      }
+    },
+    exit: {
+      x: '-80%',
+      transition: { ease: 'easeInOut' }
+    }
+  }
 
   return (
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-start align-items-center">
-      <div className="row justify-content-center subjects-container">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={parent}
+        className="row justify-content-center subjects-container">
         <div className="text-center mb-3">
           <h1>Subjects</h1>
           <hr className="title-divider"></hr>
@@ -22,31 +67,29 @@ function SubjectsList() {
           <h3>{error ? 'There has been an error...' : ''}</h3>
         </div>
         {data &&
-          data.map((subject, i) => (
-            <AnimatePresence key={subject.SubjectID}>
-              <motion.div
-                key="box"
-                initial={{ y: '20%', opacity: 0, scale: 0.5 }}
-                animate={{ y: 0, opacity: 1, scale: 1 }}
-                transition={{ duration: 0.2, ease: 'easeOut', delay: i * 0.2 }}
-                exit={{ x: '20%' }}
-                className="d-flex flex-column col-5 justify-content-center align-items-center card-subject m-3 overflow-hidden">
-                <Link className="text-decoration-none" Link to={`/${subject.SubjectID}`}>
-                  <div>
-                    <img
-                      className="subject-lesson-image img-fluid"
-                      src={`/images/${subject.Subject}` + '.jpg'}
-                      alt={subject.Subject + ' Image'}
-                    />
-                  </div>
-                  <div className="textWrapper text-center mt-2">
-                    <h2>{subject.Subject}</h2>
-                  </div>
-                </Link>
-              </motion.div>
-            </AnimatePresence>
+          data.map((subject) => (
+            <motion.div
+              key="subject.SubjectID"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="d-flex flex-column col-5 justify-content-center align-items-center card-subject m-3 overflow-hidden">
+              <Link className="text-decoration-none" Link to={`/${subject.SubjectID}`}>
+                <div>
+                  <img
+                    className="subject-lesson-image img-fluid"
+                    src={`/images/${subject.Subject}.jpg`}
+                    alt={subject.Subject + ' Image'}
+                  />
+                </div>
+                <div className="textWrapper text-center mt-2">
+                  <h2>{subject.Subject}</h2>
+                </div>
+              </Link>
+            </motion.div>
           ))}
-      </div>
+      </motion.div>
     </div>
   )
 }

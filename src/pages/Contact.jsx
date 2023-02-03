@@ -1,9 +1,18 @@
+import { motion } from 'framer-motion'
+
 function Contact() {
   return (
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap align-items-center">
       <div className="row justify-content-center">
         <div className="text-center mb-4">
-          <h1>Contact Us</h1>
+          <motion.h1
+            key="contact"
+            initial={{ y: '20%', opacity: 0, scale: 0.5 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            exit={{ opacity: 0 }}>
+            Contact Us
+          </motion.h1>
           <hr className="title-divider"></hr>
         </div>
         <div className="d-flex flex-column justify-content-center px-5 align-items-center overflow-hidden w-75">
