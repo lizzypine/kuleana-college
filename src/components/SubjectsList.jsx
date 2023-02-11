@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useGetSubjectsQuery } from '../data/subjects'
+import { useGetSubjectsQuery } from '../data/apiSlice'
 import { motion } from 'framer-motion'
 
 function SubjectsList() {

@@ -1,5 +1,5 @@
 import { useNavigate, Link, useParams } from 'react-router-dom'
-import { useGetLessonsQuery } from '../data/subjects'
+import { useGetLessonsQuery } from '../data/apiSlice'
 import { motion, AnimatePresence } from 'framer-motion'
 
 function LessonsList() {

@@ -43,4 +43,25 @@ responsibility
   //   19: 'Real Numbers'
   // }
 
+    // const lessonNames = {
+  //   Compromise: 2,
+  //   Steadfastness: 3,
+  //   Integrity: 4,
+  //   Seriousness: 5,
+  //   Focus: 6,
+  //   'Doing Your Best': 7,
+  //   'Pursuing Goals': 8,
+  //   Self: 9,
+  //   Others: 10,
+  //   Work: 11,
+  //   Checkbooks: 12,
+  //   Debt: 13,
+  //   Paychecks: 14,
+  //   Benefits: 15,
+  //   Taxes: 16,
+  //   Investment: 17,
+  //   Accountants: 18,
+  //   'Real Numbers': 19
+  // }
+
   // const lessonName = lessonNames[params.lessonId]

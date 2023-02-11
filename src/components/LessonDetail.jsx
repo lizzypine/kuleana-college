@@ -1,12 +1,74 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import { useGetLessonDetailQuery } from '../data/subjects'
+import { useGetLessonDetailQuery } from '../data/apiSlice'
 import { motion, AnimatePresence } from 'framer-motion'
+import reactStringReplace from 'react-string-replace'
 
 function LessonDetail() {
   const params = useParams()
-  const { data, isLoading, error } = useGetLessonDetailQuery(params.lessonId)
+  const { isLoading, error } = useGetLessonDetailQuery(params.lessonId)
+  const { data } = useGetLessonDetailQuery(params.lessonId)
   const navigate = useNavigate()
 
+  // const lessonNames = {
+  //   Compromise: 2,
+  //   Steadfastness: 3,
+  //   Integrity: 4,
+  //   Seriousness: 5,
+  //   Focus: 6,
+  //   'Doing Your Best': 7,
+  //   'Pursuing Goals': 8,
+  //   Self: 9,
+  //   Others: 10,
+  //   Work: 11,
+  //   Checkbooks: 12,
+  //   Debt: 13,
+  //   Paychecks: 14,
+  //   Benefits: 15,
+  //   Taxes: 16,
+  //   Investment: 17,
+  //   Accountant: 18,
+  //   'Real Numbers': 19
+  // }
+
+  // If one of the lesson names renders, attach a link to it to the appropriate lesson.
+  const lessonNames = {
+    "<a href='LessonDetails.aspx?GUID=&Less=2'>Compromise</a>": 'Compromise',
+    "<a href='LessonDetails.aspx?GUID=&Less=13'> Debt</a>": 'Debt',
+    "<a href='LessonDetails.aspx?GUID=&Less=18'>Accountant</a>": 'Accountant',
+    "<a href='LessonDetails.aspx?GUID=&Less=18'> Accountant</a>": 'Accountant'
+  }
+
+  const lessonNumbers = {
+    "<a href='LessonDetails.aspx?GUID=&Less=2'>Compromise</a>": 2,
+    "<a href='LessonDetails.aspx?GUID=&Less=13'> Debt</a>": 13,
+    "<a href='LessonDetails.aspx?GUID=&Less=18'>Accountant</a>": 18,
+    "<a href='LessonDetails.aspx?GUID=&Less=18'> Accountant</a>": 18
+  }
+
+  // Fix Accountant with and without Space. There are examples of both
+  // Add bold and italicized text using reactStringReplace
+  // Check against every page on the current website
+
+  function formatText(responseText) {
+    const newText = responseText
+      .replaceAll('<b>', ' ')
+      .replaceAll('</b>', ' ')
+      .replaceAll('<i>', ' ')
+      .replaceAll('</i>', ' ')
+      .replaceAll(';', ' ')
+
+    const newText2 = reactStringReplace(
+      newText,
+      /(<a href='LessonDetails.aspx\?GUID=&Less=\d+'>[^<]*<\/a>)/g,
+      (match) => (
+        <a key={lessonNumbers[match]} href={lessonNumbers[match]}>
+          {lessonNames[match]}
+        </a>
+      )
+    )
+
+    return reactStringReplace(newText2, /(<br \/>)/g, (match, i) => <br />)
+  }
   return (
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap align-items-center">
       <div className="row justify-content-center">
@@ -72,14 +134,7 @@ function LessonDetail() {
                     animate={{ y: 0, opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, ease: 'easeOut', delay: i * 0.3 }}
                     exit={{ x: '50%' }}>
-                    {detail.LessonText.replaceAll('<b>', ' ')
-                      .replaceAll('</b>', ' ')
-                      .replaceAll('<i>', ' ')
-                      .replaceAll('</i>', ' ')
-                      .replaceAll(';', ' ')
-                      .replaceAll("<a href='LessonDetails.aspx?GUID=&Less=", ' ')
-                      .replaceAll('</a>', '')
-                      .replaceAll(/[0-9]+'>/g, '')}
+                    {formatText(detail.LessonText)}
                   </motion.p>
                 </div>
               </div>

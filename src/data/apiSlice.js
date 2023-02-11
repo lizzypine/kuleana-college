@@ -19,6 +19,4 @@ export const subjectsApi = createApi({
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetSubjectsQuery } = subjectsApi
-export const { useGetLessonsQuery } = subjectsApi
-export const { useGetLessonDetailQuery } = subjectsApi
+export const { useGetSubjectsQuery, useGetLessonsQuery, useGetLessonDetailQuery } = subjectsApi
