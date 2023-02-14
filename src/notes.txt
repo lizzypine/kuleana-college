@@ -1,3 +1,7 @@
+// notes on mismapping
+On the original site, on the Seriousness page, the link to Focus actually goes to Self. Updated this.
+On the ... Focus page, the link to Seriousness actually goes to
+
 finance
 - checkbooks
 - debt
