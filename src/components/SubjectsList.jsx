@@ -69,7 +69,7 @@ function SubjectsList() {
         {data &&
           data.map((subject) => (
             <motion.div
-              key="subject.SubjectID"
+              key={subject.SubjectID}
               variants={containerVariants}
               initial="hidden"
               animate="visible"

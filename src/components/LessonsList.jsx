@@ -51,7 +51,7 @@ function LessonsList() {
           {data &&
             data.map((lesson) => (
               <motion.div
-                key="lesson.lessonID"
+                key={lesson.LessonID}
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
