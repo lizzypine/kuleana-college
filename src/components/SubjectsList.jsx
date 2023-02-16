@@ -75,7 +75,7 @@ function SubjectsList() {
               animate="visible"
               exit="exit"
               className="d-flex flex-column col-5 justify-content-center align-items-center card-subject m-3 overflow-hidden">
-              <Link className="text-decoration-none" Link to={`/${subject.SubjectID}`}>
+              <Link to={`/${subject.SubjectID}`} className="text-decoration-none">
                 <div>
                   <img
                     className="subject-lesson-image img-fluid"

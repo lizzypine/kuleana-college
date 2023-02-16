@@ -5,7 +5,7 @@ import { faSchool } from '@fortawesome/free-solid-svg-icons'
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg px-4 mb-4">
-      <Link className="navbar-brand ms-3 text-uppercase" Link to="/">
+      <Link to="/" className="navbar-brand ms-3 text-uppercase">
         <div className="d-flex">
           <div>
             <FontAwesomeIcon
@@ -29,10 +29,10 @@ function Navbar() {
       </button>
       <div className="navbar-collapse justify-content-end collapse" id="navbarText">
         <div className="navbar-nav h3 m-2">
-          <Link className="nav-item nav-link mx-4 text-uppercase" Link to="/about">
+          <Link to="/about" className="nav-item nav-link mx-4 text-uppercase">
             About
           </Link>
-          <Link className="nav-item nav-link mx-4 text-uppercase" Link to="/contact">
+          <Link to="/contact" className="nav-item nav-link mx-4 text-uppercase">
             Contact
           </Link>
         </div>

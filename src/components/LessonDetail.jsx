@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, Link } from 'react-router-dom'
 import { useGetLessonDetailQuery } from '../data/apiSlice'
 import { motion, AnimatePresence } from 'framer-motion'
 import reactStringReplace from 'react-string-replace'
@@ -76,13 +76,13 @@ function LessonDetail() {
       replacedText,
       /(<a href='\s?LessonDetails.aspx\?GUID=&Less=\d+'>[^<]*<\/a>)/g,
       (match, i) => (
-        <a key={lessonNumbers[match] + i} className="live-link" href={lessonNumbers[match]}>
+        <Link to={lessonNumbers[match]} key={lessonNumbers[match] + i} className="live-link">
           {lessonNames[match]}
-        </a>
+        </Link>
       )
     )
 
-    // // Add line breaks where originally intended.
+    // Add line breaks where originally intended.
     replacedText = reactStringReplace(replacedText, /([;])/g, (match, i) => <p key={match + i}></p>)
     replacedText = reactStringReplace(replacedText, /(<br \/>)/g, (match, i) => (
       <p key={match + i}></p>

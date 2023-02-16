@@ -57,7 +57,7 @@ function LessonsList() {
                 animate="visible"
                 exit="exit"
                 className="d-flex flex-column col-5 justify-content-center align-items-center card-lesson m-3 overflow-hidden">
-                <Link className="text-decoration-none" Link to={`${lesson.LessonID}`}>
+                <Link to={`${lesson.LessonID}`} className="text-decoration-none">
                   <div>
                     <img
                       className="subject-lesson-image img-fluid"
