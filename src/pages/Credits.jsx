@@ -18,7 +18,12 @@ function Credits() {
                   width=".5em"
                   className="d-inline-block me-3 align-center"
                 />
-                <a href="https://www.vecteezy.com/members/yellow-people">Nakin Poonsri</a>
+                <a
+                  href="https://www.vecteezy.com/members/yellow-people"
+                  target="_blank"
+                  rel="noreferrer">
+                  Nakin Poonsri
+                </a>
               </li>
               <li>
                 <FontAwesomeIcon
@@ -26,7 +31,12 @@ function Credits() {
                   width=".5em"
                   className="d-inline-block me-3 align-center"
                 />
-                <a href="https://www.vecteezy.com/members/cozydesign">cozydesign</a>
+                <a
+                  href="https://www.vecteezy.com/members/cozydesign"
+                  target="_blank"
+                  rel="noreferrer">
+                  cozydesign
+                </a>
               </li>
               <li>
                 <FontAwesomeIcon
@@ -34,7 +44,12 @@ function Credits() {
                   width=".5em"
                   className="d-inline-block me-3 align-center"
                 />
-                <a href="https://www.vecteezy.com/members/doodervector">Dooder</a>
+                <a
+                  href="https://www.vecteezy.com/members/doodervector"
+                  target="_blank"
+                  rel="noreferrer">
+                  Dooder
+                </a>
               </li>
               <li>
                 <FontAwesomeIcon
@@ -42,7 +57,12 @@ function Credits() {
                   width=".5em"
                   className="d-inline-block me-3 align-center"
                 />
-                <a href="https://www.vecteezy.com/members/imajin-noasking">imajin noasking</a>
+                <a
+                  href="https://www.vecteezy.com/members/imajin-noasking"
+                  target="_blank"
+                  rel="noreferrer">
+                  imajin noasking
+                </a>
               </li>
               <li>
                 <FontAwesomeIcon
@@ -50,7 +70,10 @@ function Credits() {
                   width=".5em"
                   className="d-inline-block me-3 align-center"
                 />
-                <a href="https://www.vecteezy.com/members/illustration4stock224427">
+                <a
+                  href="https://www.vecteezy.com/members/illustration4stock224427"
+                  target="_blank"
+                  rel="noreferrer">
                   illustration4stock224427
                 </a>
               </li>
