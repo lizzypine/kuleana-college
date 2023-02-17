@@ -15,11 +15,11 @@ function Contact() {
           </motion.h1>
           <hr className="title-divider"></hr>
         </div>
-        <div className="d-flex flex-column justify-content-center px-5 align-items-center overflow-hidden w-75">
+        <div className="d-flex flex-column justify-content-center align-items-center overflow-hidden w-50">
           <p>
             Feel free to contact us if you have questions or if you would like to see specific
-            lessons presented or if you would like personalized instruction:
-            administration@KuleanaCollege.com
+            lessons presented or if you would like personalized instruction:&nbsp;
+            <span className="text-decoration-underline">administration@KuleanaCollege.com</span>.
           </p>
         </div>
       </div>
