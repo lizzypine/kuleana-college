@@ -1,5 +1,5 @@
 import { useRouteError, Link } from 'react-router-dom'
-function ErrorPage() {
+function DoesNotExist() {
   const error = useRouteError()
   console.error(error)
 
@@ -18,4 +18,4 @@ function ErrorPage() {
   )
 }
 
-export default ErrorPage
+export default DoesNotExist

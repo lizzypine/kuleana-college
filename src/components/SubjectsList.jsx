@@ -55,16 +55,16 @@ function SubjectsList() {
         variants={parent}
         className="row justify-content-center subjects-container">
         <div className="text-center mb-3">
+          <h2 className="text-center">{error ? 'There has been an error.' : ''}</h2>
           <h1>Subjects</h1>
           <hr className="title-divider"></hr>
         </div>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center align-items-center">
           {isLoading && (
             <div className="spinner-border" role="status" style={{ width: '3rem', height: '3rem' }}>
               <span className="sr-only"></span>
             </div>
           )}
-          <h3>{error ? 'There has been an error...' : ''}</h3>
         </div>
         {data &&
           data.map((subject) => (

@@ -36,7 +36,9 @@ function LessonsList() {
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-start align-items-center">
       <div className="row justify-content-center subjects-container">
         <div className="text-center mb-3">
+          <h2 className="text-center">{error ? 'There has been an error.' : ''}</h2>
           <h1>{subjectName}</h1>
+          <h2 className="text-center">{params.subjectId > 3 ? 'This page does not exist' : ''}</h2>
           <hr className="title-divider"></hr>
         </div>
         <div className="d-flex justify-content-center">
@@ -45,7 +47,6 @@ function LessonsList() {
               <span className="sr-only"></span>
             </div>
           )}
-          <h3>{error ? 'There has been an error...' : ''}</h3>
         </div>
         <AnimatePresence>
           {data &&

@@ -5,8 +5,7 @@ import reactStringReplace from 'react-string-replace'
 
 function LessonDetail() {
   const params = useParams()
-  const { isLoading, error } = useGetLessonDetailQuery(params.lessonId)
-  const { data } = useGetLessonDetailQuery(params.lessonId)
+  const { data, isLoading, error } = useGetLessonDetailQuery(params.lessonId)
   const navigate = useNavigate()
 
   function formatText(responseText) {
@@ -49,7 +48,6 @@ function LessonDetail() {
       <b key={match + i}>{match}</b>
     ))
 
-    // return removeStuff
     return replacedText
   }
 
@@ -65,8 +63,9 @@ function LessonDetail() {
               <span className="sr-only"></span>
             </div>
           )}
-          <h3>{error ? 'There has been an error...' : ''}</h3>
         </div>
+        <h2 className="text-center">{error ? 'There has been an error.' : ''}</h2>
+        <h2 className="text-center">{params.lessonId > 19 ? 'This page does not exist' : ''}</h2>
         <AnimatePresence>
           {data &&
             data.map((detail, i) => (
@@ -81,12 +80,14 @@ function LessonDetail() {
                   className="text-center">
                   {detail.LessonTitle}
                 </motion.h1>
+
                 <motion.hr
                   initial={{ y: 800 }}
                   animate={{ y: 0 }}
                   transition={{ duration: 0.2, ease: 'easeOut', delay: i * 0.2 }}
                   exit={{ x: '-80%' }}
                   className="title-divider"></motion.hr>
+
                 <motion.div
                   key="box"
                   initial={{ y: '20%', opacity: 0, scale: 0.5 }}

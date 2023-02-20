@@ -10,13 +10,13 @@ import { ApiProvider } from '@reduxjs/toolkit/dist/query/react'
 import { subjectsApi } from './data/apiSlice'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
-    <ApiProvider api={subjectsApi}>
-      <React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
+      <ApiProvider api={subjectsApi}>
         <BrowserRouter>
           <App />
         </BrowserRouter>
-      </React.StrictMode>
-    </ApiProvider>
-  </Provider>
+      </ApiProvider>
+    </Provider>
+  </React.StrictMode>
 )
