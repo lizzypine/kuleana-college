@@ -1,6 +1,6 @@
 import { useNavigate, Link, useParams } from 'react-router-dom'
 import { useGetLessonsQuery } from '../data/apiSlice'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 function LessonsList() {
   const params = useParams()
@@ -14,23 +14,6 @@ function LessonsList() {
   }
 
   const subjectName = subjectNames[params.subjectId]
-  const containerVariants = {
-    hidden: {
-      opacity: 0,
-      y: '20%',
-      scale: 0.5
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.2, ease: 'easeOut', delay: 0.2 }
-    },
-    exit: {
-      x: '-100vh',
-      transition: { ease: 'easeInOut' }
-    }
-  }
 
   return (
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-start align-items-center">
@@ -48,43 +31,43 @@ function LessonsList() {
             </div>
           )}
         </div>
-        <AnimatePresence>
-          {data &&
-            data.map((lesson) => (
-              <motion.div
-                key={lesson.LessonID}
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                className="d-flex flex-column col-5 justify-content-center align-items-center card-lesson m-3 overflow-hidden">
-                <Link to={`${lesson.LessonID}`} className="text-decoration-none">
-                  <div>
-                    <img
-                      className="subject-lesson-image img-fluid"
-                      // Image file names are based on the original website's image files.
-                      src={`/images/${lesson.ImageName.substring(
-                        13,
-                        lesson.ImageName.length - 4
-                      )}.jpg`}
-                      alt={lesson.LessonTitle + ' Image'}
-                      // Use a placeholder image if none available.
-                      onError={({ currentTarget }) => {
-                        currentTarget.onerror = null
-                        currentTarget.src = '/images/Self.jpg'
-                      }}
-                    />
-                  </div>
-                  <div className="textWrapper text-center mt-2">
-                    <h2>{lesson.LessonTitle}</h2>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
-        </AnimatePresence>
+
+        {data &&
+          data.map((lesson, i) => (
+            <motion.div
+              key={lesson.LessonID}
+              initial={{ opacity: 0, translateY: 0 }}
+              animate={{ opacity: 1, translateY: 20 }}
+              transition={{ duration: 0.2, ease: 'easeOut', delay: i * 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              exit={{ x: '-600%', ease: 'easeInOut' }}
+              className="d-flex flex-column col-5 justify-content-center align-items-center card-lesson m-3 overflow-hidden">
+              <Link to={`${lesson.LessonID}`} className="text-decoration-none">
+                <div>
+                  <img
+                    className="subject-lesson-image img-fluid"
+                    // Image file names are based on the original website's image files.
+                    src={`/images/${lesson.ImageName.substring(
+                      13,
+                      lesson.ImageName.length - 4
+                    )}.jpg`}
+                    alt={lesson.LessonTitle + ' Image'}
+                    // Use a placeholder image if none available.
+                    onError={({ currentTarget }) => {
+                      currentTarget.onerror = null
+                      currentTarget.src = '/images/Self.jpg'
+                    }}
+                  />
+                </div>
+                <div className="textWrapper text-center mt-2">
+                  <h2>{lesson.LessonTitle}</h2>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
       </div>
       <div className="m-3">
-        <button type="button" className="btn btn-back nav-item" onClick={() => navigate(-1)}>
+        <button type="button" className="btn btn-back-nav nav-item" onClick={() => navigate(-1)}>
           Back
         </button>
       </div>

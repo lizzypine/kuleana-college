@@ -14,7 +14,7 @@ function Navbar() {
               className="d-inline-block me-3 align-baseline"
             />
           </div>
-          <div>Kuleana College</div>
+          <div className="navbar-title">Kuleana College</div>
         </div>
       </Link>
       <button

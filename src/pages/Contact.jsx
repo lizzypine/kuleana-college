@@ -15,12 +15,19 @@ function Contact() {
           </motion.h1>
           <hr className="title-divider"></hr>
         </div>
-        <div className="d-flex flex-column justify-content-center align-items-center overflow-hidden w-50">
-          <p>
+        <div className="d-flex flex-column justify-content-center overflow-hidden contact-page">
+          <motion.p
+            initial={{ y: '20%', opacity: 0, scale: 0.5 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            exit={{ y: '20%', opacity: 0 }}>
             Feel free to contact us if you have questions or if you would like to see specific
             lessons presented or if you would like personalized instruction:&nbsp;
-            <span className="text-decoration-underline">administration@KuleanaCollege.com</span>.
-          </p>
+            <span className="text-decoration-underline text-break">
+              administration@KuleanaCollege.com
+            </span>
+            .
+          </motion.p>
         </div>
       </div>
     </div>

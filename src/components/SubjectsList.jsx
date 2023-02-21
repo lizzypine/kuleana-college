@@ -5,54 +5,11 @@ import { motion } from 'framer-motion'
 function SubjectsList() {
   const { data, isLoading, error } = useGetSubjectsQuery()
 
-  const parent = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        when: 'beforeChildren',
-        staggerChildren: 0.5,
-        delay: 0.3,
-        default: { ease: 'easeInOut' }
-      }
-    },
-    hidden: {
-      opacity: 0,
-      x: 1,
-      transition: {
-        when: 'afterChildren'
-      }
-    }
-  }
-
-  const containerVariants = {
-    hidden: {
-      opacity: 0,
-      y: '20%',
-      scale: 0.5
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        delayChildren: 200,
-        staggerChildren: 0.2,
-        ease: 'easeOut'
-      }
-    },
-    exit: {
-      x: '-80%',
-      transition: { ease: 'easeInOut' }
-    }
-  }
-
   return (
     <div className="container-fluid subjects-wrapper d-flex flex-column col flex-wrap justify-content-start align-items-center">
       <motion.div
         initial="hidden"
         animate="visible"
-        variants={parent}
         className="row justify-content-center subjects-container">
         <div className="text-center mb-3">
           <h2 className="text-center">{error ? 'There has been an error.' : ''}</h2>
@@ -67,13 +24,14 @@ function SubjectsList() {
           )}
         </div>
         {data &&
-          data.map((subject) => (
+          data.map((subject, i) => (
             <motion.div
               key={subject.SubjectID}
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
+              initial={{ opacity: 0, translateY: 0 }}
+              animate={{ opacity: 1, translateY: 20 }}
+              transition={{ duration: 0.2, delay: i * 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              exit={{ x: '-600%', ease: 'easeInOut' }}
               className="d-flex flex-column col-5 justify-content-center align-items-center card-subject m-3 overflow-hidden">
               <Link to={`/${subject.SubjectID}`} className="text-decoration-none">
                 <div>

@@ -21,9 +21,9 @@ function About() {
           animate={{ y: 0, opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
           exit={{ y: '20%', opacity: 0 }}
-          className="d-flex flex-column justify-content-center px-5 align-items-center overflow-hidden w-75">
+          className="d-flex flex-column justify-content-center align-items-center overflow-hidden about-width">
           <h3 className="text-center">Kuleana Life Lessons Start Right Here With You.</h3>
-          <p>Our lessons begin where the classroom ends.</p>
+          <p className="about-text-p">Our lessons begin where the classroom ends.</p>
         </motion.div>
       </div>
     </div>

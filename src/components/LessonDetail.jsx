@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { useGetLessonDetailQuery } from '../data/apiSlice'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import reactStringReplace from 'react-string-replace'
 
 function LessonDetail() {
@@ -11,7 +11,7 @@ function LessonDetail() {
   function formatText(responseText) {
     let replacedText = responseText
 
-    // Create live links
+    // Activate live links
     replacedText = reactStringReplace(
       replacedText,
       /(<a href='\s?LessonDetails.aspx\?GUID=&Less=\d+'>[^<]*<\/a>)/g,
@@ -43,7 +43,7 @@ function LessonDetail() {
     // Remove the remaining <i>, <b> and <br /> tags
     replacedText = reactStringReplace(replacedText, /(<i>|<\/i>|<b>|<\/b>|<\/b>)/g, () => '')
 
-    // Bold the tip on the checkbooks detail page
+    // Bold the tip section on the checkbooks detail page
     replacedText = reactStringReplace(replacedText, /(Tip[^]*.)/g, (match, i) => (
       <b key={match + i}>{match}</b>
     ))
@@ -66,67 +66,62 @@ function LessonDetail() {
         </div>
         <h2 className="text-center">{error ? 'There has been an error.' : ''}</h2>
         <h2 className="text-center">{params.lessonId > 19 ? 'This page does not exist' : ''}</h2>
-        <AnimatePresence>
-          {data &&
-            data.map((detail, i) => (
-              <div
-                className="d-flex flex-column justify-content-center align-items-center"
-                key={detail.LessonID + i}>
-                <motion.h1
-                  initial={{ y: 800 }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 0.2, ease: 'easeOut' }}
-                  exit={{ x: 800, duration: 1.2, ease: 'easeIn' }}
-                  className="text-center">
-                  {detail.LessonTitle}
-                </motion.h1>
+        {data &&
+          data.map((detail, i) => (
+            <div
+              className="d-flex flex-column justify-content-center align-items-center"
+              key={detail.LessonID + i}>
+              <motion.h1
+                initial={{ y: 800 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                exit={{ x: '-600%', duration: 1.2, ease: 'easeIn' }}
+                className="text-center">
+                {detail.LessonTitle}
+              </motion.h1>
 
-                <motion.hr
-                  initial={{ y: 800 }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 0.2, ease: 'easeOut', delay: i * 0.2 }}
-                  exit={{ x: '-80%' }}
-                  className="title-divider"></motion.hr>
+              <motion.hr
+                initial={{ y: 800 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.2, ease: 'easeOut', delay: i * 0.2 }}
+                exit={{ x: '-600%', duration: 1.6, ease: 'easeIn' }}
+                className="title-divider"></motion.hr>
 
-                <motion.div
+              <motion.div
+                key="box"
+                initial={{ y: '20%', opacity: 0, scale: 0.5 }}
+                animate={{ y: 0, opacity: 1, scale: 1 }}
+                transition={{ duration: 0.2, ease: 'easeOut', delay: i * 0.2 }}
+                exit={{ x: '-600%', duration: 1.9, ease: 'easeIn' }}
+                className="row justify-content-center">
+                <img
+                  className="subject-lesson-image img-fluid mb-3"
+                  id="lesson-detail-image-container"
+                  // Image file names are based on the original website's image files.
+                  src={`/images/${detail.ImageName.substring(13, detail.ImageName.length - 4)}.jpg`}
+                  alt={detail.LessonTitle + ' Image'}
+                  // Use a placeholder image if none available.
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null
+                    currentTarget.src = '/images/Self.jpg'
+                  }}
+                />
+              </motion.div>
+              <div className="w-75">
+                <motion.p
                   key="box"
                   initial={{ y: '20%', opacity: 0, scale: 0.5 }}
                   animate={{ y: 0, opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.2, ease: 'easeOut', delay: i * 0.2 }}
-                  exit={{ x: '-80%' }}
-                  className="row justify-content-center">
-                  <img
-                    className="subject-lesson-image img-fluid mb-3"
-                    id="lesson-detail-image-container"
-                    // Image file names are based on the original website's image files.
-                    src={`/images/${detail.ImageName.substring(
-                      13,
-                      detail.ImageName.length - 4
-                    )}.jpg`}
-                    alt={detail.LessonTitle + ' Image'}
-                    // Use a placeholder image if none available.
-                    onError={({ currentTarget }) => {
-                      currentTarget.onerror = null
-                      currentTarget.src = '/images/Self.jpg'
-                    }}
-                  />
-                </motion.div>
-                <div className="w-75">
-                  <motion.p
-                    key="box"
-                    initial={{ y: '20%', opacity: 0, scale: 0.5 }}
-                    animate={{ y: 0, opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, ease: 'easeOut', delay: i * 0.3 }}
-                    exit={{ x: '50%' }}>
-                    {formatText(detail.LessonText)}
-                  </motion.p>
-                </div>
+                  transition={{ duration: 0.4, ease: 'easeOut', delay: i * 0.3 }}
+                  exit={{ x: '-600%', duration: 1.6, ease: 'easeIn' }}>
+                  {formatText(detail.LessonText)}
+                </motion.p>
               </div>
-            ))}
-        </AnimatePresence>
+            </div>
+          ))}
       </div>
       <div className="m-3">
-        <button type="button" className="btn btn-back nav-item" onClick={() => navigate(-1)}>
+        <button type="button" className="btn btn-back-nav nav-item" onClick={() => navigate(-1)}>
           Back
         </button>
       </div>
