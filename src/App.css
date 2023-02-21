@@ -162,26 +162,14 @@ h3 {
 
   .contact-page {
     width: 90%;
-    /* margin: 0 1em; */
   }
-
-  /* #lesson-detail-image-container {
-    width: 70%;
-  } */
 }
 
 @media only screen and (max-width: 553px) {
-  .navbar {
-    justify-content: center;
-  }
-
-  .navbar-nav {
-    align-items: center;
-  }
-
-  .navbar-title {
-    font-size: 0.7em;
-    align-self: center;
+  .navbar-brand {
+    font-size: 1.6em;
+    justify-content: space-between;
+    margin: 0.5em;
   }
 
   .card-subject {
