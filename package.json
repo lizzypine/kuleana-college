@@ -22,8 +22,13 @@
     "web-vitals": "^3.1.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
+    "babel-jest": "^29.4.3",
+    "esbuild": "^0.17.10",
+    "esbuild-jest": "^0.5.0",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard": "^17.0.0",
