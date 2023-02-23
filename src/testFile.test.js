@@ -1,24 +1,4 @@
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-const fizz_buzz = require('./index')
+const fizz_buzz = require('./index.js')
 
 describe('FizzBuzz', () => {
   test('[3] should result in "fizz"', () => {
