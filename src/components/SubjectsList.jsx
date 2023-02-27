@@ -37,7 +37,7 @@ function SubjectsList() {
                 <div>
                   <img
                     className="subject-lesson-image img-fluid"
-                    src={`/images/${subject.Subject}.jpg`}
+                    src={`/images/${subject.Subject}.png`}
                     alt={subject.Subject + ' Image'}
                   />
                 </div>

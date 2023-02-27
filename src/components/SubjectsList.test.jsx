@@ -8,15 +8,14 @@ import SubjectsList from './SubjectsList'
 import App from '../App.js'
 
 describe('SubjectsList test suite', () => {
-  test('Renders the App component', async() => {
+  test('Renders the App component', async () => {
     renderWithProviders(<App />)
   })
-  test('renders the SubjectsList component', async() => {
+  test('renders the SubjectsList component', async () => {
     renderWithProviders(<SubjectsList />)
   })
-  test('fetches data from the subjects API', async () => {
+  test('fetches data from the subjects API', async() => {
     rest.get('https://kuleanacollege.com/subjectsapi.aspx', (req, res, ctx) => {
-      // successful response
       return res(
         ctx.status(200),
         ctx.json([
@@ -39,7 +38,7 @@ describe('SubjectsList test suite', () => {
       return res(ctx.status(500))
     })
   })
-  test('should show error message on error', async () => {
+  test('should show error message on error', async() => {
     server.use(...networkErrorHandlers)
     renderWithProviders(<App />)
     const errorMessage = await screen.findByText(/There has been an error/i)

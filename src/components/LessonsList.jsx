@@ -50,12 +50,12 @@ function LessonsList() {
                     src={`/images/${lesson.ImageName.substring(
                       13,
                       lesson.ImageName.length - 4
-                    )}.jpg`}
+                    )}.png`}
                     alt={lesson.LessonTitle + ' Image'}
                     // Use a placeholder image if none available.
                     onError={({ currentTarget }) => {
                       currentTarget.onerror = null
-                      currentTarget.src = '/images/Self.jpg'
+                      currentTarget.src = '/images/Self.png'
                     }}
                   />
                 </div>

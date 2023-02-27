@@ -98,12 +98,12 @@ function LessonDetail() {
                   className="subject-lesson-image img-fluid mb-3"
                   id="lesson-detail-image-container"
                   // Image file names are based on the original website's image files.
-                  src={`/images/${detail.ImageName.substring(13, detail.ImageName.length - 4)}.jpg`}
+                  src={`/images/${detail.ImageName.substring(13, detail.ImageName.length - 4)}.png`}
                   alt={detail.LessonTitle + ' Image'}
                   // Use a placeholder image if none available.
                   onError={({ currentTarget }) => {
                     currentTarget.onerror = null
-                    currentTarget.src = '/images/Self.jpg'
+                    currentTarget.src = '/images/Self.png'
                   }}
                 />
               </motion.div>
