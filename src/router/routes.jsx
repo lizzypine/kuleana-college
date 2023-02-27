@@ -6,7 +6,6 @@ import Contact from '../pages/Contact'
 import Credits from '../pages/Credits'
 import LessonsListPage from '../pages/LessonsListPage'
 import LessonDetailPage from '../pages/LessonDetailPage'
-import ErrorPage from '../pages/ErrorPage'
 
 export default function AppRoutes() {
   const location = useLocation()
@@ -20,7 +19,6 @@ export default function AppRoutes() {
         <Route path="credits" element={<Credits />} />
         <Route path=":subjectId" element={<LessonsListPage />} />
         <Route path=":subjectId/:lessonId" element={<LessonDetailPage />} />
-        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </AnimatePresence>
   )

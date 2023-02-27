@@ -1,9 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import 'whatwg-fetch'
 
 // Define a service using a base URL and expected endpoints
 export const subjectsApi = createApi({
   reducerPath: 'subjectsApi',
-  // Update baseUrl in production with "https://kuleanacollege.com"
+  // In production, change base URL to "https://kuleanacollege.com"
   baseQuery: fetchBaseQuery({ baseUrl: '/' }),
   endpoints: (builder) => ({
     getSubjects: builder.query({
