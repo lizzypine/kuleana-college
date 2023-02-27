@@ -1,18 +1,20 @@
 import { rest } from 'msw'
+import { screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { renderWithProviders } from '../test-utils'
+import { server } from '../mocks/server'
+import { networkErrorHandlers } from '../mocks/handlers'
 import SubjectsList from './SubjectsList'
 import App from '../App.js'
-import 'whatwg-fetch'
 
 describe('SubjectsList test suite', () => {
   test('Renders the App component', async() => {
     renderWithProviders(<App />)
   })
-  test('Renders the SubjectsList component', async() => {
+  test('renders the SubjectsList component', async() => {
     renderWithProviders(<SubjectsList />)
   })
-  test('Fetches data from the subjects API', async () => {
+  test('fetches data from the subjects API', async () => {
     rest.get('https://kuleanacollege.com/subjectsapi.aspx', (req, res, ctx) => {
       // successful response
       return res(
@@ -32,9 +34,15 @@ describe('SubjectsList test suite', () => {
       )
     })
   })
-  test('Handles error response', () => {
+  test('handles error response', () => {
     rest.get('https://kuleanacollege.com/subjectsapi.aspx', (req, res, ctx) => {
       return res(ctx.status(500))
     })
+  })
+  test('should show error message on error', async () => {
+    server.use(...networkErrorHandlers)
+    renderWithProviders(<App />)
+    const errorMessage = await screen.findByText(/There has been an error/i)
+    expect(errorMessage).toBeInTheDocument()
   })
 })
