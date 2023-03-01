@@ -4,8 +4,7 @@ import 'whatwg-fetch'
 // Define a service using a base URL and expected endpoints
 export const subjectsApi = createApi({
   reducerPath: 'subjectsApi',
-  // In production, change base URL to "https://kuleanacollege.com"
-  baseQuery: fetchBaseQuery({ baseUrl: '/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://www.kuleanacollege.com/' }),
   endpoints: (builder) => ({
     getSubjects: builder.query({
       query: () => 'subjectsapi.aspx'
