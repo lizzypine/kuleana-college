@@ -3,13 +3,11 @@ import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import { setupListeners } from '@reduxjs/toolkit/dist/query'
 import { subjectsApi } from './data/apiSlice'
-import 'whatwg-fetch'
 import { BrowserRouter } from 'react-router-dom'
 
 export function renderWithProviders(
   ui,
   {
-    // preloadedState = {},
     // Automatically create a store instance if no store was passed in
     store = configureStore({
       reducer: {

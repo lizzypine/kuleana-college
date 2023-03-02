@@ -1,10 +1,5 @@
 import '@testing-library/jest-dom'
 import { server } from './mocks/server'
-// import { apiSlice } from './app/api/apiSlice'
-// import { setupStore } from './app/store'
-import 'whatwg-fetch'
-
-// const store = setupStore({})
 
 // Establish API mocking before all tests.
 beforeAll(() => {
