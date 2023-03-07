@@ -30,13 +30,14 @@ function LessonDetail() {
       <span key={match + index + item} className="line-break"></span>
     ))
 
+    // Updated version
     // Italicize text that originally had <i> tags
-    replacedText = reactStringReplace(replacedText, /(?<=<i>)(.*?)(?=<\/i>)/g, (match, index) => (
+    replacedText = reactStringReplace(replacedText, /(?:<i>)([^#]+)(?=<\/i>)/g, (match, index) => (
       <i key={match + index}>{match}</i>
     ))
 
     // Bold text that originally had <b> tags
-    replacedText = reactStringReplace(replacedText, /(?<=<b>)(.*?)(?=<\/b>)/g, (match, index) => (
+    replacedText = reactStringReplace(replacedText, /(?:<b>)([^#]+)(?=<\/b>)/g, (match, index) => (
       <b key={match + index}>{match}</b>
     ))
 
